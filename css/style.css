@@ -1,0 +1,231 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --blue: #B7FBFF;
+    --pink: #FFB7EB;
+}
+.container {
+    overflow: hidden;
+    max-height: 100vh;
+}
+div.circles {
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 50%;
+    z-index: 99;
+}
+div.circles:nth-child(1) {
+    top: 0;
+    left: -9rem;
+    background: var(--blue);
+}
+div.circles:nth-child(2) {
+    background: var(--pink);
+    top: -7rem;
+    left: -2rem;
+}
+div.bars:nth-child(1).open {
+    transform: rotateZ(45deg);
+    transform-origin: 17px 6px;
+}
+div.bars:nth-child(2).open {
+    opacity: 0;
+}
+div.bars:nth-child(3).open {
+    transform: rotateZ(-45deg);
+    transform-origin: 22px 5px;
+}
+
+div.ham-menu {
+    z-index: 99;
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    border-radius: 15px;
+    background: linear-gradient(to bottom, var(--blue), var(--pink));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 3px 5px 10px #dcdcdc, -3px 5px 10px #dcdcdc;
+}
+div.side-menu {
+    width: 65%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 111;
+    background: #fff;
+    background: linear-gradient(135deg, var(--blue), var(--pink));
+    left: -1500px;
+    transition: 0.5s;
+}
+div.side-menu.open {
+    left: 0
+}
+div.side-menu>h2 {
+    text-align: center;
+    margin: 1rem 0;
+    font-family: 'Poppins';
+}
+div.side-menu ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+ul li {
+    margin: 1.5rem;
+}
+ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Gill sans light';
+    font-size: 1.25rem;
+    text-align: center;
+    transition: 0.3s;
+}
+a:hover {
+    font-size: 1.45rem;
+}
+div.bars {
+    width: 3.75rem;
+    height: 7px;
+    background: #454545;
+    border-radius: 7px;
+    transition: 0.3s;
+}
+div.bars:nth-child(1) {
+    transform: translateY(-10px);
+}
+div.bars:nth-child(3) {
+    transform: translateY(10px);
+}
+div.hero-image {
+    width: 40vw;
+    height: 60vh;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -70%);
+    display: flex;
+    flex-direction: column;
+}
+div.hero-image img {
+    width: 85%;
+    height: 60vh;
+    display: block;
+    margin: auto;
+}
+div.hero-text {
+    width: 40vw;
+    display: block;
+    margin: 1.5rem auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 85%);
+    text-align: center;
+    padding: 1rem;
+    font-family:'Gill Sans light';
+}
+div.hero-text h2 {
+    font-weight: 800;
+    margin: 0.6rem 0;
+    margin-top: 0;
+}
+div.hero-text p {
+    font-size: 0.8rem;
+    color: #808080;
+}
+button.get-started {
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height: 3rem;
+    font-family: 'Gill sans light';
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to right, var(--pink), var(--blue));
+    outline: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-size: 1rem;
+    box-shadow: 3px 5px 7px #dcdcdc, -3px 5px 7px #dcdcdc;
+}
+
+@media only screen and (max-width: 800px) {
+    div.hero-image {
+        width: 90vw;
+    }
+    div.hero-text {
+        width: 80%;
+        margin-top: 4rem;
+    }
+    div.hero-text p {
+        padding: 0 1rem;
+    }
+    button.get-started {
+        bottom: 6rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .container {
+        overflow: hidden;
+    }
+    div.circles {
+        width: 12rem;
+        height: 12rem;
+    }
+    div.circles:nth-child(1) {
+        left: -6rem;
+    }
+    div.circles:nth-child(2) {
+        top: -6rem;
+    }
+    div.ham-menu {
+        width: 4rem;
+        height: 4rem;
+    }
+    div.bars {
+        width: 2.5rem;
+    }
+    div.hero-image {
+        width: 99vw;
+        height: 49vh;
+    }
+    div.hero-image img{
+        width: 95%;
+    }
+    div.hero-text {
+        width: 90vw;
+        margin-top: 2.5rem;
+        transform: translate(-50%, 27%);
+    }
+    div.hero-text h2 {
+        font-weight: 800;
+        margin: 0.6rem 0;
+        margin-top: 0;
+    }
+    div.hero-text p {
+        font-size: 0.8rem;
+        color: #808080;
+    }
+    
+}
