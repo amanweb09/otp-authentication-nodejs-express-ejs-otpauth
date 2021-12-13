@@ -51,13 +51,16 @@ getOTPButton.addEventListener('click', (e) => {
                         }
                         else {
                             //failureMessage
-
                             new Noty({
                                 text: "Invalid OTP! Please Try Again",
                                 timeOut: 1500,
                                 theme: 'sunset',
                                 type: 'error'
                             }).show();
+
+                            otpBoxes.forEach((box) => {
+                                box.value = '';
+                            })
                         }
                     }
                 })
