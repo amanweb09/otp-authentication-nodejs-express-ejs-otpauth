@@ -1,0 +1,25 @@
+{
+  "name": "pink-blue-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amanweb09/dating-website-UI-core-html.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amanweb09/dating-website-UI-core-html/issues"
+  },
+  "homepage": "https://github.com/amanweb09/dating-website-UI-core-html#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "otpauth": "^7.0.8"
+  }
+}

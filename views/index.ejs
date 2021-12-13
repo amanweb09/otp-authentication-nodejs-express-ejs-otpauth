@@ -6,14 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figma pink blue design</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 
     <div class="container">
-        <div class="circles"></div>
-        <div class="circles"></div>
+        <%- include('./partials/bubbles.ejs') %>
 
         <div class="ham-menu">
             <div class="bars"></div>
@@ -34,7 +33,7 @@
         </div>
 
         <div class="hero-image">
-            <img src="./images/undraw_Getting_coffee_re_f2do.png" alt="">
+            <img src="/images/undraw_Getting_coffee_re_f2do.png" alt="">
 
         </div>
         <div class="hero-text">
@@ -44,25 +43,10 @@
                 to let the client know what it means to design a webpage!</p>
         </div>
 
-        <button class="get-started">Get Started</button>
+        <button class="get-started" onclick="redirect('/enter-details')">Get Started</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/otpauth/dist/otpauth.umd.min.js"></script>
-    <script src="./js/index.js"></script>
-
-    <script>
-        let totp = new OTPAuth.TOTP({
-            issuer: 'ACME',
-            label: 'AzureDiamond',
-            algorithm: 'SHA1',
-            digits: 6,
-            period: 30,
-            secret: 'NB2W45DFOIZA' // or "OTPAuth.Secret.fromBase32('NB2W45DFOIZA')"
-        });
-
-        // Generate a token.
-        let token = totp.generate();
-        console.log(token);
-    </script>
+    <script src="/js/index.js"></script>
 </body>
 
 </html>

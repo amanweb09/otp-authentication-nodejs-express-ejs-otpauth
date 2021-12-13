@@ -10,3 +10,7 @@ hamMenu.addEventListener('click', () => {
 
     sideMenu.classList.toggle('open');
 })
+
+function redirect(dest) {
+    window.location.href = dest
+}

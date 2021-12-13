@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter your Phone Number</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"
+        integrity="sha512-0p3K0H3S6Q4bEWZ/WmC94Tgit2ular2/n0ESdfEX8l172YyQj8re1Wu9s/HT9T/T2osUw5Gx/6pAZNk3UKbESw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="/css/noty.min.css">
+    <link rel="stylesheet" href="/css/phone_number.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="otp-wrapper">
+            <h2>Enter your OTP</h2>
+            <form class="otp" method="POST" action="/verify-otp">
+                <input type="text" id="otp-num-1" class="otp-num" onkeyup="clickEvent(this, 'otp-num-2')">
+                <input type="text" id="otp-num-2" class="otp-num" onkeyup="clickEvent(this, 'otp-num-3')">
+                <input type="text" id="otp-num-3" class="otp-num" onkeyup="clickEvent(this, 'otp-num-4')">
+                <input type="text" id="otp-num-4" class="otp-num" onkeyup="clickEvent(this, 'otp-num-5')">
+                <input type="text" id="otp-num-5" class="otp-num" onkeyup="clickEvent(this, 'otp-num-6')">
+                <input type="text" id="otp-num-6" class="otp-num">
+            </form>
+
+            <button class="verify-otp" id="verify-otp" type="submit">Verify</button>
+        </div>
+        <%- include('./partials/bubbles.ejs') %>
+
+            <div class="phone-number">
+                <img src="/images/undraw_Emails_re_cqen.png" alt="">
+                <h2>Enter your phone Number</h2>
+                <form action="/get-otp" method="post" onsubmit="submitOTP()">
+                    <input type="tel" name="tel" id="tel" placeholder="+91 9856321450">
+                    <button type="submit" id="getOTP">Verify</button>
+                </form>
+            </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+        integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/noty.min.js"></script>
+    <script src="/js/submitOTP.js"></script>
+    <script>
+        function clickEvent(first, last) {
+            if (first.value.length) {
+                document.getElementById(last).focus()
+            }
+        }
+    </script>
+</body>
+
+</html>
