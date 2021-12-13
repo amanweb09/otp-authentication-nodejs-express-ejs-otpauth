@@ -28,6 +28,10 @@ A beginner-friendly project to establish OTP auth on your website.
 - EJS
 - OTP auth
 
+### Clinet-side libraries
+- Axios
+- Noty
+
 ## How to run the server?
  `node src/server.js`
  or
